@@ -1,23 +1,31 @@
 package com.example.a04_examen
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.view.ContextMenu
 import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var adaptador: ArrayAdapter<String>;
     var posicionItemSeleccionado = 0
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val botonAnadirField= findViewById<Button>(R.id.btn_anadir_field)
+        botonAnadirField.setOnClickListener{
+            irActividad(FormAnadirField::class.java)
+        }
 
         actualizarListViewFields();
     }
@@ -28,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             this,
             android.R.layout.simple_list_item_1,
             BBaseDatosMemoria.fields.mapIndexed { index, field ->
-                "${field.id}. ${field.nombre}"
+                "${field.nombre}"
             }
         )
         listViewLibros.adapter = adaptador;
@@ -54,11 +62,15 @@ class MainActivity : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
             R.id.mi_ver -> {
-                "${posicionItemSeleccionado}"
+                val idField = posicionItemSeleccionado;
+
+                irActividad(FieldActivity::class.java, idField)
+
                 return true
             }
             R.id.mi_editar -> {
-                "${posicionItemSeleccionado}"
+                val idField = posicionItemSeleccionado;
+                irActividad(FormAnadirField::class.java, idField)
                 return true
             }
             R.id.mi_eliminar -> {
@@ -68,6 +80,12 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onContextItemSelected(item)
         }
+    }
+
+    fun irActividad(clase: Class<*>, idField: Int = -1) {
+        val intent = Intent(this, clase)
+        intent.putExtra("idField", idField)
+        startActivity(intent)
     }
 
 
