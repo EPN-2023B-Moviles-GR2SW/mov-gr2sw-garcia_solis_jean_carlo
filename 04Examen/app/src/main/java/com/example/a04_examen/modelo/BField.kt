@@ -1,7 +1,7 @@
-package com.example.a04_examen
+package com.example.a04_examen.modelo
 
 
- data class BField(
+data class BField(
     var nombre: String?,
     var date: String?,
     var isActive: Boolean?,

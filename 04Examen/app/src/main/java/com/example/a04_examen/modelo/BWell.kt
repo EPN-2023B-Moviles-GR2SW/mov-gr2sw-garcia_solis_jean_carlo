@@ -1,4 +1,4 @@
-package com.example.a04_examen
+package com.example.a04_examen.modelo
 
 data class BWell (
     var nombre: String?,

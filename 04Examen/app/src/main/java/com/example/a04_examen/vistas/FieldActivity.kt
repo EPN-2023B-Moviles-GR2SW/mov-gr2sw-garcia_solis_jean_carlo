@@ -1,4 +1,4 @@
-package com.example.a04_examen
+package com.example.a04_examen.vistas
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,9 @@ import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a04_examen.R
+import com.example.a04_examen.modelo.BBaseDatosMemoria
+import com.example.a04_examen.modelo.BWell
 
 class FieldActivity : AppCompatActivity() {
 
@@ -67,7 +70,7 @@ class FieldActivity : AppCompatActivity() {
 
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
-            R.id.mi_editar2->{
+            R.id.mi_editar2 ->{
                 try {
                     val idWell = posicionItemSeleccionado;
                     irActividad(FormGestionarWell::class.java, idWell, idField)

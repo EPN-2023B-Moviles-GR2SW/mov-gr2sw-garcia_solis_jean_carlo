@@ -1,4 +1,4 @@
-package com.example.a04_examen
+package com.example.a04_examen.vistas
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.a04_examen.R
+import com.example.a04_examen.modelo.BBaseDatosMemoria
+import com.example.a04_examen.modelo.BField
 
 
 class FormAnadirField() : AppCompatActivity(){

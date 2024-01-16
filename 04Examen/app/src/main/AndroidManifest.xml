@@ -13,16 +13,16 @@
         android:theme="@style/Theme.AppCompat.Light"
         tools:targetApi="31">
         <activity
-            android:name=".FormGestionarWell"
+            android:name=".vistas.FormGestionarWell"
             android:exported="false" />
         <activity
-            android:name=".FieldActivity"
+            android:name=".vistas.FieldActivity"
             android:exported="false" />
         <activity
-            android:name=".FormAnadirField"
+            android:name=".vistas.FormAnadirField"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".vistas.MainActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

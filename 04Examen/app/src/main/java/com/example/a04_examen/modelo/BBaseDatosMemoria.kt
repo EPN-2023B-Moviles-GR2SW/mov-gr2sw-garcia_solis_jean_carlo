@@ -1,5 +1,4 @@
-package com.example.a04_examen
-
+package com.example.a04_examen.modelo
 
 
 class BBaseDatosMemoria {
@@ -8,11 +7,11 @@ class BBaseDatosMemoria {
         val fields = arrayListOf<BField>()
 
 //---------------------------FIELD CRUD-----------------------------------
-        fun agregarField(field:BField){
+        fun agregarField(field: BField){
             fields.add(field);
         }
 
-        fun buscarFieldById(idField: Int):BField?{
+        fun buscarFieldById(idField: Int): BField?{
             val field = fields.getOrNull(idField);
             if(field != null){
                 return field
@@ -22,7 +21,7 @@ class BBaseDatosMemoria {
             }
         }
 
-        fun actualizarField(id:Int, newField:BField){
+        fun actualizarField(id:Int, newField: BField){
             val field = fields.getOrNull(id);
             if(field != null){
                 println("Field Seleccionado: $field")
@@ -47,7 +46,7 @@ class BBaseDatosMemoria {
         }
 
         //---------------------------WELL CRUD-----------------------------------
-        fun obtenerWells(field:BField):MutableList<BWell>{
+        fun obtenerWells(field: BField):MutableList<BWell>{
             var listWells: MutableList<BWell> = mutableListOf();
             for(idx in field.wells.indices){
                 println("${idx}: ${field.wells.get(idx)}");
@@ -56,7 +55,7 @@ class BBaseDatosMemoria {
             return listWells;
         }
 
-        fun agregarWell(idField:Int, well:BWell){
+        fun agregarWell(idField:Int, well: BWell){
             val field = fields.getOrNull(idField);
             if(field != null){
                 field.wells.add(well);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#052E5E"
-    tools:context=".FormGestionarWell">
+    tools:context=".vistas.FormGestionarWell">
 
     <LinearLayout
         android:layout_width="225dp"
