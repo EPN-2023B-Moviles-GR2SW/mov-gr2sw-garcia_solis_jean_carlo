@@ -6,8 +6,6 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.deber_02.R
 import com.example.deber_02.sql.BD
-import android.widget.Switch
-import com.google.android.material.snackbar.Snackbar
 
 
 class FieldForm : AppCompatActivity() {
@@ -31,25 +29,19 @@ class FieldForm : AppCompatActivity() {
         fecha.setText(field.date)
         isActive.setText(field.isActive.toString())
 
-        val botonActualizar = findViewById<Button>(R.id.btn_actualizar_field)
+        val botonActualizar = findViewById<Button>(R.id.btn_actualizar_well)
         botonActualizar
             .setOnClickListener {
                 field.nombre = nombre.text.toString()
                 field.date = fecha.text.toString()
                 field.isActive = isActive.text.toString().toBoolean()
                 BD.tField!!.actualizarField(field)
-                mostrarSnackbar("Field Actualizado")
+
+                finish()
             }
 
     }
 
-    fun mostrarSnackbar(texto: String) {
-        val snack = Snackbar.make(
-            findViewById(R.id.layout_field_form),
-            texto, Snackbar.LENGTH_LONG
-        )
-        snack.show()
-    }
 }
 
 

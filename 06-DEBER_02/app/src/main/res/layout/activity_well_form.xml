@@ -2,10 +2,23 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_field_form"
+    android:id="@+id/layout_well_form"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vistas.FieldForm">
+    tools:context=".vistas.WellForm">
+
+    <TextView
+        android:id="@+id/tv_depth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Depth:"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/input_depth"
+        app:layout_constraintEnd_toEndOf="@+id/input_depth"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/input_depth" />
 
     <EditText
         android:id="@+id/input_nombre"
@@ -64,7 +77,22 @@
         android:id="@+id/input_isActive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginBottom="276dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_depth"
+        app:layout_constraintVertical_bias="0.636"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/input_depth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="368dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +100,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_fecha"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.677"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -86,7 +114,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_isActive"
-        app:layout_constraintVertical_bias="0.007"
+        app:layout_constraintVertical_bias="0.229"
         tools:ignore="MissingConstraints" />
 
     <TextView
