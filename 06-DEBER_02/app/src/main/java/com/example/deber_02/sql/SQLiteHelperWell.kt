@@ -25,7 +25,7 @@ class SQLiteHelperWell(
         vAGuardar.put("nombre", well.nombre)
         vAGuardar.put("date", well.date)
         vAGuardar.put("depth", well.depth)
-        vAGuardar.put("isActive", if (well.isActive) 1 else 0)
+        vAGuardar.put("isActive", well.isActive)
         vAGuardar.put("fieldId", fieldId)
 
         val resultadoGuardar = bdEscritura.insert("WELL", null, vAGuardar)
@@ -53,7 +53,7 @@ class SQLiteHelperWell(
         vAActualizar.put("nombre", well.nombre)
         vAActualizar.put("date", well.date)
         vAActualizar.put("depth", well.depth)
-        vAActualizar.put("isActive", if (well.isActive) 1 else 0)
+        vAActualizar.put("isActive", well.isActive)
 
         val parametroActualizar = arrayOf(well.id.toString())
         val resultadoActualizacion = bdEscritura.update(
@@ -88,14 +88,14 @@ class SQLiteHelperWell(
                 val nombre = resultadoLectura.getString(1)
                 val date = resultadoLectura.getString(2)
                 val depth = resultadoLectura.getDouble(3)
-                val isActive = resultadoLectura.getInt(4) == 1
+                val isActiveString = resultadoLectura.getString(4)
                 val fieldId = resultadoLectura.getInt(5)
 
                 wellEncontrado.id = id
                 wellEncontrado.nombre = nombre
                 wellEncontrado.date = date
                 wellEncontrado.depth = depth
-                wellEncontrado.isActive = isActive
+                wellEncontrado.isActive = isActiveString.toBoolean()
 
             } while (resultadoLectura.moveToNext())
         }
@@ -117,8 +117,10 @@ class SQLiteHelperWell(
                 val nombre = resultadoLectura.getString(1)
                 val date = resultadoLectura.getString(2)
                 val depth = resultadoLectura.getDouble(3)
-                val isActive = resultadoLectura.getInt(4) == 1
+                val isActiveString = resultadoLectura.getString(4)
                 val fieldId = resultadoLectura.getInt(5)
+
+                val isActive = isActiveString.toBoolean() ?: false
 
                 val well = Well(id, nombre, date, depth, isActive)
                 wells.add(well)
@@ -149,7 +151,9 @@ class SQLiteHelperWell(
                 val nombre = resultadoLectura.getString(1)
                 val date = resultadoLectura.getString(2)
                 val depth = resultadoLectura.getDouble(3)
-                val isActive = resultadoLectura.getInt(4) == 1
+                val isActiveString = resultadoLectura.getString(4)
+
+                val isActive = isActiveString.toBoolean() ?: false
 
                 val well = Well(id, nombre, date, depth, isActive)
                 wells.add(well)

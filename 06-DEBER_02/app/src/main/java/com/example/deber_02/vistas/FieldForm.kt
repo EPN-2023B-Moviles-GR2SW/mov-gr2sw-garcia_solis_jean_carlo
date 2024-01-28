@@ -6,12 +6,12 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.deber_02.R
 import com.example.deber_02.sql.BD
+import android.widget.Switch
 import com.google.android.material.snackbar.Snackbar
 
 
 class FieldForm : AppCompatActivity() {
-    lateinit var fecha: EditText
-    //val calendar = Calendar.getInstance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

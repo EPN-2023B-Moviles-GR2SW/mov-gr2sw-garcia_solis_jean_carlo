@@ -21,7 +21,7 @@ class SQLiteHelperField(
                id INTEGER PRIMARY KEY AUTOINCREMENT,
                nombre VARCHAR(100),
                date TEXT,  
-               isActive INTEGER
+               isActive VARCHAR(50)
                ) 
             """.trimIndent()
         db?.execSQL(scriptSQLCrearTablaField)
@@ -32,7 +32,7 @@ class SQLiteHelperField(
                nombre VARCHAR(100),
                date TEXT,
                depth REAL,
-               isActive INTEGER,
+               isActive VARCHAR(50),
                fieldId INTEGER,
                FOREIGN KEY (fieldId) REFERENCES FIELD(id)
                ) 
@@ -48,7 +48,7 @@ class SQLiteHelperField(
         val vAGuardar = ContentValues()
         vAGuardar.put("nombre", field.nombre)
         vAGuardar.put("date", field.date)
-        vAGuardar.put("isActive", if (field.isActive) 1 else 0)
+        vAGuardar.put("isActive", field.isActive)
 
         val resultadoGuardar = bdEscritura.insert("FIELD", null, vAGuardar)
         bdEscritura.close()
@@ -77,11 +77,11 @@ class SQLiteHelperField(
         val vAActualizar = ContentValues()
         vAActualizar.put("nombre", field.nombre)
         vAActualizar.put("date", field.date)
-        vAActualizar.put("isActive", if (field.isActive) 1 else 0)
+        vAActualizar.put("isActive", field.isActive)
 
         val parametrosUpdate = arrayOf(field.id.toString())
         val resultadoUpdate= bdEscritura.update(
-            "CONDOMINIO",
+            "FIELD",
             vAActualizar,
             "id=?",
             parametrosUpdate
@@ -111,13 +111,13 @@ class SQLiteHelperField(
                 val id = resultadoLectura.getInt(0)
                 val nombre = resultadoLectura.getString(1)
                 val date = resultadoLectura.getString(2)
-                val isActive= resultadoLectura.getInt(3) == 1
+                val isActiveString= resultadoLectura.getString(3)
 
 
                 fieldEncontrado.id = id
                 fieldEncontrado.nombre = nombre
                 fieldEncontrado.date = date
-                fieldEncontrado.isActive = isActive
+                fieldEncontrado.isActive = isActiveString.toBoolean()
 
             } while (resultadoLectura.moveToNext())
         }
@@ -141,13 +141,13 @@ class SQLiteHelperField(
                 val id = resultadoLectura.getInt(0)
                 val nombre = resultadoLectura.getString(1)
                 val date = resultadoLectura.getString(2)
-                val isActive = resultadoLectura.getInt(3) == 1
+                val isActiveString = resultadoLectura.getString(3)
 
                 val field = Field(
                     id,
                     nombre,
                     date,
-                    isActive
+                    isActiveString.toBoolean()
                 )
                 fields.add(field)
             } while (resultadoLectura.moveToNext())
