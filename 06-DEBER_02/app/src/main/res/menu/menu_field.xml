@@ -10,5 +10,5 @@
         android:title="Eliminar" />
     <item
         android:id="@+id/mi_ver_wells"
-        android:title="Ver Wells" />
+        android:title="Ver Detalle" />
 </menu>

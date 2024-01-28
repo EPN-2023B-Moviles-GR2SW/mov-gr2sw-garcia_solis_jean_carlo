@@ -39,15 +39,8 @@ class WellForm : AppCompatActivity() {
                 well.depth = depth.text.toString().toDouble()
                 well.isActive = isActive.text.toString().toBoolean()
                 BD.tWell!!.actualizarWell(well)
-                mostrarSnackbar("Well Actualizado")
+                finish()
             }
     }
 
-    fun mostrarSnackbar(texto: String) {
-        val snack = Snackbar.make(
-            findViewById(R.id.layout_well_form),
-            texto, Snackbar.LENGTH_LONG
-        )
-        snack.show()
-    }
 }
