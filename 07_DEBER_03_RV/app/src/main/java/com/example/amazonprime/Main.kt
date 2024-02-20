@@ -1,7 +1,7 @@
 package com.example.amazonprime
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.amazonprime.adapter.ParentAdapter
 import com.example.amazonprime.databinding.ActivityMainBinding
 import com.example.amazonprime.utils.SampleData
