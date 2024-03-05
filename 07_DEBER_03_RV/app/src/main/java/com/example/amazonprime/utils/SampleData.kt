@@ -19,10 +19,10 @@ object SampleData {
     )
 
     val collections = listOf(
-        ParentModel("Solo para tí" , movieModel),
-        ParentModel("Continuar Viendo >" , movieModel.reversed()),
-        ParentModel("Mi lista >" , movieModel.shuffled()),
-        ParentModel("Recién Añadidos" , movieModel)
+        ParentModel("MOST RECOMMENDED" , movieModel),
+        ParentModel("AMAZON ORIGINAL>" , movieModel.reversed()),
+        ParentModel("COMING SOON >" , movieModel.shuffled()),
+        ParentModel("WATCH IN YOUR LANGUAGE" , movieModel)
 
     )
 }

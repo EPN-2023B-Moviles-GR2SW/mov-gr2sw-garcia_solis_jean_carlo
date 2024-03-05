@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#052E5E"
+    tools:context=".vistas.FormGestionarWell">
+
+    <LinearLayout
+        android:layout_width="225dp"
+        android:layout_height="213dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415">
+
+        <EditText
+            android:id="@+id/lb_nombre2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/lb_Fecha2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#F3EFEF"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/lb_Estado2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#FFFFFF"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/lb_depth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#F8F5F5"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="87dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="44dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginTop="7dp"
+            android:background="#A60000"
+            android:gravity="bottom|end"
+            android:text="Nombre: "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginTop="7dp"
+            android:background="#A60000"
+            android:gravity="bottom|end"
+            android:text="Fecha: "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginTop="8dp"
+            android:background="#A60000"
+            android:gravity="bottom|end"
+            android:text="Estado: "
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_marginTop="10dp"
+            android:background="#A60000"
+            android:gravity="bottom|end"
+            android:text="Depth:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_view_form_well"
+        android:layout_width="409dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="20dp"
+        android:background="#A60000"
+        android:backgroundTint="#A60000"
+        android:gravity="center"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Gestionar Well"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_guardar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="#A60000"
+        android:textColor="@android:color/white"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.284"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_cancelar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="196dp"
+        android:backgroundTint="#A60000"
+        android:textColor="@android:color/white"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_guardar2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

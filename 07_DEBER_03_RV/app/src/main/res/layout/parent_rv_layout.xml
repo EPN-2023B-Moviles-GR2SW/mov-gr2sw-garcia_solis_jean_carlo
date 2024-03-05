@@ -20,7 +20,7 @@
             android:textSize="24sp"
             android:paddingLeft="10dp"
             android:layout_height="wrap_content"
-            tools:text="PRUEBA"/>
+            tools:text=""/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvChild"
             android:layout_width="match_parent"

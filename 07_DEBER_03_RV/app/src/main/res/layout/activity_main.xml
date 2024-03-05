@@ -50,19 +50,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="@string/hbomax"
+                    android:text="Amazon Prime"
                     android:textColor="@color/white"
                     android:textSize="28sp" />
 
                 <!-- Icono de Avatar -->
-                <ImageView
-                    android:id="@+id/icon_avatar"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:gravity="end"
-                    android:src="@drawable/ic_usuario"
-                    android:contentDescription="@string/avatar" />
             </LinearLayout>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -73,26 +65,26 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#232f3e">
+
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:id="@+id/carousel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/background_gradient">
+            android:layout_height="600dp"
+            app:autoPlay="true"
+            app:autoPlayDelay="4000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:showBottomShadow="true"
+            app:showNavigationButtons="false"
+            app:showTopShadow="false" />
 
-            <org.imaginativeworld.whynotimagecarousel.ImageCarousel
-                android:id="@+id/carousel"
-                android:layout_width="match_parent"
-                android:layout_height="600dp"
-                app:autoPlay="true"
-                app:autoPlayDelay="4000"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:showBottomShadow="true"
-                app:showNavigationButtons="false"
-                app:showTopShadow="false" />
-
-            <androidx.recyclerview.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvParent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,7 +95,7 @@
                 app:layout_constraintTop_toBottomOf="@id/carousel">
             </androidx.recyclerview.widget.RecyclerView>
 
-        </LinearLayout>
+    </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
