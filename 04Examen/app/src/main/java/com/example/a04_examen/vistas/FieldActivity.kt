@@ -55,10 +55,10 @@ class FieldActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val wellsRef = db.collection("field/${idField}/wells")
         val datosDepartamento = hashMapOf(
-            "nombre" to "YCA-001",
-            "date" to "05/03/2024",
-            "isActive" to true,
-            "depth" to "80"
+            "nombre" to R.id.lb_nombre2,
+            "date" to R.id.lb_Fecha2,
+            "isActive" to R.id.lb_Estado2,
+            "depth" to R.id.lb_depth
         )
         val identificador = Date().time
         wellsRef

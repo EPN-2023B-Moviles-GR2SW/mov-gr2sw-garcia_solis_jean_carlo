@@ -107,10 +107,10 @@ class MainActivity : AppCompatActivity() {
         val db = Firebase.firestore
         val fieldRef = db.collection("field")
         val datosField = hashMapOf(
-            "nombre" to "Yuca",
-            "date" to "02/03/2024",
-            "isActive" to false,
-            "area" to "2000",
+            "nombre" to R.id.lb_nombre,
+            "date" to R.id.lb_Fecha,
+            "isActive" to R.id.lb_Estado,
+            "area" to R.id.lb_area,
         )
         val identificador = Date().time
         fieldRef // (crear/actualizar)
@@ -144,14 +144,12 @@ class MainActivity : AppCompatActivity() {
     override fun onContextItemSelected(item: MenuItem): Boolean {
         return when (item.itemId){
             R.id.mi_ver -> {
-                val idField = posicionItemSeleccionado;
 
                 irActividadConId(FieldActivity::class.java, idFieldSeleccionado)
 
                 return true
             }
             R.id.mi_editar -> {
-                val idField = posicionItemSeleccionado;
                 irActividadConId(FormAnadirField::class.java, idFieldSeleccionado)
                 return true
             }
